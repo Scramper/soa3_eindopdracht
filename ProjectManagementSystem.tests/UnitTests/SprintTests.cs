@@ -1,5 +1,4 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
-using Task = ProjectManagementSystem.Core.Domain.Models.Task;
 
 namespace ProjectManagementSystem.Tests.XunitTests
 {
@@ -9,8 +8,8 @@ namespace ProjectManagementSystem.Tests.XunitTests
         public void AddTask_ShouldAddTaskToList()
         {
             // Arrange
-            var sprint = new Sprint { Tasks = new List<Task>() };
-            var task = new Task { Id = 1, Title = "Test Task" };
+            var sprint = new Sprint { Tasks = new List<PmsTask>() };
+            var task = new PmsTask { Id = 1, Title = "Test Task" };
 
             // Act
             sprint.AddTask(task);

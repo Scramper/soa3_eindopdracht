@@ -2,7 +2,7 @@
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
-    public class Task
+    public class PmsTask
     {
         public int Id { get; set; }
         public string Title { get; set; }

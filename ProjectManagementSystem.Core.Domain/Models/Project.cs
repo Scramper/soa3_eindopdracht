@@ -6,11 +6,11 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<Task> Tasks { get; set; }
+        public List<PmsTask> Tasks { get; set; }
         public List<Sprint> Sprints { get; set; }
         public Team Team { get; set; }
 
-        public void AddTask(Task task)
+        public void AddTask(PmsTask task)
         {
             Tasks.Add(task);
         }
