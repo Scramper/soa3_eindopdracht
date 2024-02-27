@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManagementSystem.Core.Domain.States
+namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    internal class RejectedTaskState : ITaskState
+    public class ReviewNotOkTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)

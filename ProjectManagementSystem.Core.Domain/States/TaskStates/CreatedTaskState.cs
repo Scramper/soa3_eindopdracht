@@ -1,14 +1,9 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjectManagementSystem.Core.Domain.States
+namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    internal class TestNotOkTaskState : ITaskState
+    public class CreatedTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)

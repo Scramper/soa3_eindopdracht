@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManagementSystem.Core.Domain.States
+namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    public class ReviewNotOkTaskState : ITaskState
+    public class InProgressTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)
@@ -17,7 +17,7 @@ namespace ProjectManagementSystem.Core.Domain.States
         }
         public void MoveToNextState()
         {
-            _task.TaskState = new InProgressTaskState();
+            _task.TaskState = new ReviewTaskState();
         }
 
         public void Created()
