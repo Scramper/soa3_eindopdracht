@@ -37,7 +37,7 @@ namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 
         public void Rejected()
         {
-            throw new NotImplementedException();
+            _task.TaskState = new RejectedTaskState();
         }
 
         public void Review()
