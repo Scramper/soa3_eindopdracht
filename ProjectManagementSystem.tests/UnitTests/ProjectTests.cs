@@ -10,7 +10,7 @@ namespace ProjectManagementSystem.Tests.XunitTests
         {
             // Arrange
             var project = new Project { Tasks = new List<PmsTask>() };
-            var task = new Task { Id = 1, Title = "Test Task" };
+            var task = new PmsTask { Id = 1, Title = "Test Task" };
 
             // Act
             project.AddTask(task);

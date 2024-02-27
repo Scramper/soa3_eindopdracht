@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    internal class DoneTaskState : ITaskState
+    public class DoneTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)

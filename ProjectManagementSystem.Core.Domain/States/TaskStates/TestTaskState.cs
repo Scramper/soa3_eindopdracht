@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    internal class TestTaskState : ITaskState
+    public class TestTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)
@@ -62,3 +62,4 @@ namespace ProjectManagementSystem.Core.Domain.States.TaskStates
             throw new NotImplementedException();
         }
     }
+}

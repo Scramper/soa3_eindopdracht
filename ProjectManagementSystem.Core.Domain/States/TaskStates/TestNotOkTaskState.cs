@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    internal class TestNotOkTaskState : ITaskState
+    public class TestNotOkTaskState : ITaskState
     {
         private PmsTask _task;
         public void SetTask(PmsTask task)
