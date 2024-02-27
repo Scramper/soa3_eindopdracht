@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagementSystem.Inf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.ApplicationServices", "..\ProjectManagement.ApplicationServices\ProjectManagementSystem.ApplicationServices.csproj", "{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.Tests", "..\ProjectManagementSystem.tests\ProjectManagementSystem.Tests.csproj", "{3228BCCE-D4E2-467B-B099-5417D4D1CC48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3228BCCE-D4E2-467B-B099-5417D4D1CC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3228BCCE-D4E2-467B-B099-5417D4D1CC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3228BCCE-D4E2-467B-B099-5417D4D1CC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3228BCCE-D4E2-467B-B099-5417D4D1CC48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
