@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.Infrastructure", "..\ProjectManagementSystem.Infrastructure\ProjectManagementSystem.Infrastructure.csproj", "{FA5C6A55-C786-4488-9763-453DC7CD6D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.ApplicationServices", "..\ProjectManagement.ApplicationServices\ProjectManagement.ApplicationServices.csproj", "{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.ApplicationServices", "..\ProjectManagement.ApplicationServices\ProjectManagementSystem.ApplicationServices.csproj", "{FEE1FD27-D3B8-4CC8-9BE6-1D2B591A511C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Tests", "..\ProjectManagement.Tests\ProjectManagement.Tests.csproj", "{AC4E8A19-356F-4B67-A8BF-1074203E6EA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.Tests", "..\ProjectManagement.Tests\ProjectManagementSystem.Tests.csproj", "{AC4E8A19-356F-4B67-A8BF-1074203E6EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
