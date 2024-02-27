@@ -1,6 +1,6 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
 
-namespace ProjectManagementSystem.tests
+namespace ProjectManagementSystem.Tests.XunitTests
 {
     public class TeamTests
     {

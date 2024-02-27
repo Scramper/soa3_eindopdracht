@@ -1,7 +1,7 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
 using Task = ProjectManagementSystem.Core.Domain.Models.Task;
 
-namespace ProjectManagementSystem.tests
+namespace ProjectManagementSystem.Tests.XunitTests
 {
     public class ProjectTests
     {
