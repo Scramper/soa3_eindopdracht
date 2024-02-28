@@ -1,6 +1,7 @@
 ﻿
 using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.Strategies;
+using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -18,6 +19,7 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public Project(IPrioritizationStrategy initialStrategy)
         {
             prioritizationStrategy = initialStrategy;
+            Tasks = new List<PmsTask>();
         }
 
         public void AddTask(PmsTask task)
