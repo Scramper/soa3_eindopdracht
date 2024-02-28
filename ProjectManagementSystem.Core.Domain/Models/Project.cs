@@ -20,6 +20,7 @@ namespace ProjectManagementSystem.Core.Domain.Models
         {
             prioritizationStrategy = initialStrategy;
             Tasks = new List<PmsTask>();
+            Sprints = new List<Sprint>();
         }
 
         public void AddTask(PmsTask task)
