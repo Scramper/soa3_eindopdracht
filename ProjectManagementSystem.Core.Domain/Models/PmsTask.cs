@@ -3,7 +3,7 @@ using ProjectManagementSystem.Core.Domain.States.TaskStates;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
-    public class PmsTask
+    public class PmsTask : ITaskComponent
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -73,6 +73,12 @@ namespace ProjectManagementSystem.Core.Domain.Models
             {
                 observer.Update(newState);
             }
+        }
+
+        //Decorator pattern methods
+        public void Execute()
+        {
+            // Existing task execution logic
         }
     }
 }
