@@ -1,6 +1,6 @@
 ﻿
 using ProjectManagementSystem.Core.Domain.Interfaces;
-using System.Threading.Tasks;
+using ProjectManagementSystem.Core.Domain.Strategies;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -14,6 +14,11 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public Team Team { get; set; }
 
         private IPrioritizationStrategy prioritizationStrategy;
+
+        public Project(IPrioritizationStrategy initialStrategy)
+        {
+            prioritizationStrategy = initialStrategy;
+        }
 
         public void AddTask(PmsTask task)
         {
@@ -29,7 +34,7 @@ namespace ProjectManagementSystem.Core.Domain.Models
         {
             Team = team;
         }
-        
+
 
         //Strategy pattern methods
         public void SetPrioritizationStrategy(IPrioritizationStrategy strategy)

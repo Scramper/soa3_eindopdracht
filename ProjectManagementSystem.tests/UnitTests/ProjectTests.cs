@@ -1,4 +1,5 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
+using ProjectManagementSystem.Core.Domain.Strategies;
 using PmsTask = ProjectManagementSystem.Core.Domain.Models.PmsTask;
 
 namespace ProjectManagementSystem.Tests.XunitTests
@@ -9,7 +10,7 @@ namespace ProjectManagementSystem.Tests.XunitTests
         public void AddTask_ShouldAddTaskToList()
         {
             // Arrange
-            var project = new Project { Tasks = new List<PmsTask>() };
+            var project = new Project(new DeadlinePrioritizationStrategy()) { Tasks = new List<PmsTask>() };
             var task = new PmsTask { Id = 1, Title = "Test Task" };
 
             // Act
@@ -23,7 +24,7 @@ namespace ProjectManagementSystem.Tests.XunitTests
         public void AddSprint_ShouldAddSprintToList()
         {
             // Arrange
-            var project = new Project { Sprints = new List<Sprint>() };
+            var project = new Project(new DeadlinePrioritizationStrategy()) { Sprints = new List<Sprint>() };
             var sprint = new Sprint { Name = "Test Sprint" };
 
             // Act
@@ -37,7 +38,7 @@ namespace ProjectManagementSystem.Tests.XunitTests
         public void AddTeam_ShouldSetProjectTeam()
         {
             // Arrange
-            var project = new Project();
+            var project = new Project(new DeadlinePrioritizationStrategy());
             var team = new Team { Id = 1, Name = "Test Team" };
 
             // Act
