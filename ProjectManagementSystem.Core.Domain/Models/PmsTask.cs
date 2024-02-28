@@ -1,5 +1,6 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.States.TaskStates;
+using System;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -18,8 +19,12 @@ namespace ProjectManagementSystem.Core.Domain.Models
             {
                 _taskState = value;
                 _taskState.SetTask(this);
+                NotifyObservers(_taskState);
             }
         }
+
+        private List<IStateObserver> Observers = new List<IStateObserver>();
+
         public PmsTask()
         {
             TaskState = new CreatedTaskState(); // Set initial state
@@ -48,6 +53,25 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public void AssignUser(User user)
         {
             Assignee = user;
+            Attach(user);
+        }
+
+        public void Attach(IStateObserver observer)
+        {
+            Observers.Add(observer);
+        }
+
+        public void Detach(IStateObserver observer)
+        {
+            Observers.Remove(observer);
+        }
+
+        protected void NotifyObservers(ITaskState newState)
+        {
+            foreach (var observer in Observers)
+            {
+                observer.Update(newState);
+            }
         }
     }
 }
