@@ -9,6 +9,8 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public User Assignee { get; set; }
+        public DateTime Deadline { get; set; }
+        public int Complexity { get; set; }
 
         private ITaskState _taskState;
         public ITaskState TaskState
