@@ -1,5 +1,4 @@
-﻿
-using ProjectManagementSystem.Core.Domain.Models;
+﻿using ProjectManagementSystem.Core.Domain.Models;
 
 namespace ProjectManagementSystem.Core.Domain.Interfaces
 {

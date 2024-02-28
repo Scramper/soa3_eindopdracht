@@ -1,6 +1,5 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.States.TaskStates;
-using System;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
