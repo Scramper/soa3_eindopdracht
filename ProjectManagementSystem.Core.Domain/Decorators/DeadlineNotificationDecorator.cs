@@ -5,23 +5,21 @@ namespace ProjectManagementSystem.Core.Domain.Decorators
 {
     public class DeadlineNotificationDecorator : TaskDecorator
     {
-        public DeadlineNotificationDecorator(ITaskComponent task) : base(task) { }
+        private readonly INotificationService _notificationService;
+        public DeadlineNotificationDecorator(ITaskComponent task, INotificationService notificationService)
+            : base(task)
+        {
+            _notificationService = notificationService;
+        }
 
         public override void Execute()
         {
-            // Execute base task logic
             base.Execute();
 
-            // Check if the deadline is within 2 days from now and notify
             if (Deadline.Subtract(DateTime.Now).TotalDays <= 2)
             {
-                Notify();
+                _notificationService.Notify($"Notification: The deadline for the task is approaching ({Deadline}).");
             }
-        }
-
-        private void Notify()
-        {
-            Console.WriteLine($"Notification: The deadline for the task is approaching ({Deadline}).");
         }
     }
 }
