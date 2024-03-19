@@ -16,6 +16,8 @@ namespace ProjectManagementSystem.Core.Domain.Models
 
         private IPrioritizationStrategy prioritizationStrategy;
 
+        public Backlog Backlog { get; set; } = new Backlog();
+
         public Project(IPrioritizationStrategy initialStrategy)
         {
             prioritizationStrategy = initialStrategy;
@@ -37,7 +39,10 @@ namespace ProjectManagementSystem.Core.Domain.Models
         {
             Team = team;
         }
-
+        public void AddBacklogItem(BacklogItem item)
+        {
+            Backlog.AddItem(item);
+        }
 
         //Strategy pattern methods
         public void SetPrioritizationStrategy(IPrioritizationStrategy strategy)
