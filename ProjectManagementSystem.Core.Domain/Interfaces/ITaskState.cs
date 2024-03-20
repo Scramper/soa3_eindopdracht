@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectManagementSystem.Core.Domain.Models;
 
 namespace ProjectManagementSystem.Core.Domain.Interfaces
 {
     public interface ITaskState
     {
+        void SetTask(PmsTask task);
+        void MoveToNextState();
+
         void Created();
         void InProgress();
         void Review();

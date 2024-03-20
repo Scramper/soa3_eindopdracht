@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+using ProjectManagementSystem.Core.Domain.Interfaces;
+using ProjectManagementSystem.Core.Domain.Strategies;
 using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.Models
@@ -11,11 +10,22 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<Task> Tasks { get; set; }
+        public List<PmsTask> Tasks { get; set; }
         public List<Sprint> Sprints { get; set; }
         public Team Team { get; set; }
 
-        public void AddTask(Task task)
+        private IPrioritizationStrategy prioritizationStrategy;
+
+        public Backlog Backlog { get; set; } = new Backlog();
+
+        public Project(IPrioritizationStrategy initialStrategy)
+        {
+            prioritizationStrategy = initialStrategy;
+            Tasks = new List<PmsTask>();
+            Sprints = new List<Sprint>();
+        }
+
+        public void AddTask(PmsTask task)
         {
             Tasks.Add(task);
         }
@@ -29,5 +39,21 @@ namespace ProjectManagementSystem.Core.Domain.Models
         {
             Team = team;
         }
+        public void AddBacklogItem(BacklogItem item)
+        {
+            Backlog.AddItem(item);
+        }
+
+        //Strategy pattern methods
+        public void SetPrioritizationStrategy(IPrioritizationStrategy strategy)
+        {
+            prioritizationStrategy = strategy;
+        }
+
+        public void PrioritizeTasks()
+        {
+            prioritizationStrategy.Prioritize(Tasks);
+        }
+
     }
 }

@@ -1,14 +1,25 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
+using ProjectManagementSystem.Core.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectManagementSystem.Core.Domain.States
+namespace ProjectManagementSystem.Core.Domain.States.TaskStates
 {
-    public class CreatedTaskState : ITaskState
+    public class ReviewTaskState : ITaskState
     {
+        private PmsTask _task;
+        public void SetTask(PmsTask task)
+        {
+            _task = task;
+        }
+        public void MoveToNextState()
+        {
+            _task.TaskState = new TestTaskState();
+        }
+
         public void Created()
         {
             throw new NotImplementedException();
@@ -38,6 +49,8 @@ namespace ProjectManagementSystem.Core.Domain.States
         {
             throw new NotImplementedException();
         }
+
+
 
         public void Test()
         {
