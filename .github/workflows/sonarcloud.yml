@@ -43,7 +43,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Scramper_soa3_eindopdracht" /o:"bpoa" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Scramper_soa3_eindopdracht" /o:"bpoa" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build SOA3_EindOpdracht/SOA3_EindOpdracht.sln   
-          dotnet test EindOpdracht/ProjectManagementSystem.tests/ProjectManagementSystem.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="../coverage.opencover.xml"
+          dotnet test SOA3_EindOpdracht/SOA3_EindOpdracht.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
