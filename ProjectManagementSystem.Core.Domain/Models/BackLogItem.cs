@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectManagementSystem.Core.Domain.Interfaces;
+using ProjectManagementSystem.Core.Domain.States.BacklogItemStates;
+using System;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -7,19 +9,20 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public PmsTask Task { get; set; } // Associate a task with the backlog item
+        public IBacklogItemState State { get; set; }
+        public List<Activity> Activities { get; set; }
 
-        public List<PmsTask> Activities { get; set; } = new List<PmsTask>();
-
-        public BacklogItem(PmsTask task)
+        public BacklogItem()
         {
-            Task = task;
-            Title = task.Title;
-            Description = task.Description;
+            State = new ToDoState(this);
         }
-        public void AddActivity(PmsTask activity)
+        public void AddActivity(Activity activity)
         {
             Activities.Add(activity);
         }
+        public void AddItem(BacklogItem item)
+        { /* Implementation */ }
+        public void RemoveItem(BacklogItem item)
+        { /* Implementation */ }
     }
 }
