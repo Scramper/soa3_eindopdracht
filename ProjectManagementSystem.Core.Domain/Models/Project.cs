@@ -1,6 +1,4 @@
-﻿
-using ProjectManagementSystem.Core.Domain.Interfaces;
-using System.Threading.Tasks;
+﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {

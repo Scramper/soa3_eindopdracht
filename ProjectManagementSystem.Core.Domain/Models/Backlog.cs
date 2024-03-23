@@ -1,4 +1,5 @@
-﻿
+﻿using ProjectManagementSystem.Core.Domain.Interfaces;
+
 namespace ProjectManagementSystem.Core.Domain.Models
 {
     public class Backlog

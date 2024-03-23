@@ -1,10 +1,9 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.States;
-using System;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
-    public class BacklogItem
+    public class BacklogItem : IBacklogItem
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -25,6 +24,10 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public BacklogItem()
         {
             State = new ToDoState(this);
+        }
+        public string GetDetails()
+        {
+            return $"Title: {Title}, Description: {Description}";
         }
         public void AddActivity(Activity activity)
         {

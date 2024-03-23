@@ -1,5 +1,4 @@
 ﻿using ProjectManagementSystem.Core.Domain.Enums;
-using ProjectManagementSystem.Core.Domain.Interfaces;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
