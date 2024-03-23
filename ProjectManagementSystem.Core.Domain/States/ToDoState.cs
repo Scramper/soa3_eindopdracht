@@ -1,7 +1,7 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.Models;
 
-namespace ProjectManagementSystem.Core.Domain.States.BacklogItemStates
+namespace ProjectManagementSystem.Core.Domain.States
 {
     public class ToDoState : IBacklogItemState
     {

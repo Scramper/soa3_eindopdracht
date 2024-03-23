@@ -1,7 +1,8 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.Models;
+using ProjectManagementSystem.Core.Domain.States.BacklogItemStates;
 
-namespace ProjectManagementSystem.Core.Domain.States.BacklogItemStates
+namespace ProjectManagementSystem.Core.Domain.States
 {
     public class DoingState : IBacklogItemState
     {

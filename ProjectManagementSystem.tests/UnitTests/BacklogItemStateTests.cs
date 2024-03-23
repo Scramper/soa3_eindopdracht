@@ -1,5 +1,5 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
-using ProjectManagementSystem.Core.Domain.States.BacklogItemStates;
+using ProjectManagementSystem.Core.Domain.States;
 
 namespace ProjectManagementSystem.Tests.XunitTests
 {
