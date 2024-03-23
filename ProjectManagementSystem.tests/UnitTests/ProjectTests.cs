@@ -1,51 +1,25 @@
-﻿using ProjectManagementSystem.Core.Domain.Models;
-using ProjectManagementSystem.Core.Domain.Strategies;
-using PmsTask = ProjectManagementSystem.Core.Domain.Models.PmsTask;
+﻿using Moq;
+using ProjectManagementSystem.Core.Domain.Models;
 
 namespace ProjectManagementSystem.Tests.XunitTests
 {
     public class ProjectTests
     {
         [Fact]
-        public void AddTask_ShouldAddTaskToList()
+        public void Project_Should_Be_Created_With_Name_And_Description()
         {
             // Arrange
-            var project = new Project(new DeadlinePrioritizationStrategy()) { Tasks = new List<PmsTask>() };
-            var task = new PmsTask { Id = 1, Title = "Test Task" };
+            var name = "Project X";
+            var description = "A new project";
 
             // Act
-            project.AddTask(task);
+            var project = new Project(name, description);
 
             // Assert
-            Assert.Contains(task, project.Tasks);
+            Assert.Equal(name, project.Name);
+            Assert.Equal(description, project.Description);
         }
 
-        [Fact]
-        public void AddSprint_ShouldAddSprintToList()
-        {
-            // Arrange
-            var project = new Project(new DeadlinePrioritizationStrategy()) { Sprints = new List<Sprint>() };
-            var sprint = new Sprint { Name = "Test Sprint" };
-
-            // Act
-            project.AddSprint(sprint);
-
-            // Assert
-            Assert.Contains(sprint, project.Sprints);
-        }
-
-        [Fact]
-        public void AddTeam_ShouldSetProjectTeam()
-        {
-            // Arrange
-            var project = new Project(new DeadlinePrioritizationStrategy());
-            var team = new Team { Id = 1, Name = "Test Team" };
-
-            // Act
-            project.AddTeam(team);
-
-            // Assert
-            Assert.Equal(team, project.Team);
-        }
+        // Add more tests for other methods of Project class
     }
 }

@@ -1,9 +1,4 @@
 ﻿using ProjectManagementSystem.Core.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -14,7 +9,7 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public string Description { get; set; }
         public User Assignee { get; set; }
 
-        private ITaskState _taskState;
+        private IBacklogItemState _backlogItemState;
 
     }
 }

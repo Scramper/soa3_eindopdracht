@@ -3,8 +3,8 @@ using ProjectManagementSystem.Core.Domain.Models;
 
 namespace ProjectManagementSystem.Core.Domain.Interfaces
 {
-    public interface IPrioritizationStrategy
+    public interface IBacklogItemStateObserver
     {
-        void Prioritize(BacklogItem backlogItem, Activity activity);
+        void Update(IBacklogItemState newState);
     }
 }

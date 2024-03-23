@@ -1,7 +1,4 @@
-﻿
-using ProjectManagementSystem.Core.Domain.Interfaces;
-using ProjectManagementSystem.Core.Domain.Strategies;
-using System.Threading.Tasks;
+﻿using ProjectManagementSystem.Core.Domain.Interfaces;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
@@ -10,24 +7,17 @@ namespace ProjectManagementSystem.Core.Domain.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<PmsTask> Tasks { get; set; }
         public List<Sprint> Sprints { get; set; }
         public Team Team { get; set; }
-
-        private IPrioritizationStrategy prioritizationStrategy;
-
         public Backlog Backlog { get; set; } = new Backlog();
 
-        public Project(IPrioritizationStrategy initialStrategy)
-        {
-            prioritizationStrategy = initialStrategy;
-            Tasks = new List<PmsTask>();
-            Sprints = new List<Sprint>();
-        }
 
-        public void AddTask(PmsTask task)
+        public Project(string name, string description)
         {
-            Tasks.Add(task);
+            Name = name;
+            Description = description;
+            Backlog = new Backlog();
+            Sprints = new List<Sprint>();
         }
 
         public void AddSprint(Sprint sprint)
@@ -39,21 +29,20 @@ namespace ProjectManagementSystem.Core.Domain.Models
         {
             Team = team;
         }
+
         public void AddBacklogItem(BacklogItem item)
         {
             Backlog.AddItem(item);
         }
 
-        //Strategy pattern methods
+        public void RemoveBacklogItem(BacklogItem item)
+        {
+            Backlog.RemoveItem(item);
+        }
+
         public void SetPrioritizationStrategy(IPrioritizationStrategy strategy)
         {
-            prioritizationStrategy = strategy;
+            // Implementation to set the prioritization strategy for the backlog items
         }
-
-        public void PrioritizeTasks()
-        {
-            prioritizationStrategy.Prioritize(Tasks);
-        }
-
     }
 }

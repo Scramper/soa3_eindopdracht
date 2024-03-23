@@ -1,25 +1,59 @@
-﻿using System;
+﻿using ProjectManagementSystem.Core.Domain.Interfaces;
+using ProjectManagementSystem.Core.Domain.States;
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
-    public class BacklogItem
+    public class BacklogItem : IBacklogItem
     {
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public PmsTask Task { get; set; } // Associate a task with the backlog item
-
-        public List<PmsTask> Activities { get; set; } = new List<PmsTask>();
-
-        public BacklogItem(PmsTask task)
+        public IBacklogItemState _state { get; set; }
+        private List<IBacklogItemStateObserver> _observers = new List<IBacklogItemStateObserver>();
+        public IBacklogItemState State
         {
-            Task = task;
-            Title = task.Title;
-            Description = task.Description;
+            get => _state;
+            set
+            {
+                _state = value;
+                NotifyObservers();
+            }
         }
-        public void AddActivity(PmsTask activity)
+        public List<Activity> Activities { get; set; }
+
+        public BacklogItem()
+        {
+            State = new ToDoState(this);
+        }
+        public string GetDetails()
+        {
+            return $"Title: {Title}, Description: {Description}";
+        }
+        public void AddActivity(Activity activity)
         {
             Activities.Add(activity);
+        }
+        public void AddItem(BacklogItem item)
+        { /* Implementation */ }
+        public void RemoveItem(BacklogItem item)
+        { /* Implementation */ }
+
+        public void AddObserver(IBacklogItemStateObserver observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void RemoveObserver(IBacklogItemStateObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        private void NotifyObservers()
+        {
+            foreach (var observer in _observers)
+            {
+                observer.Update(this._state);
+            }
         }
     }
 }
