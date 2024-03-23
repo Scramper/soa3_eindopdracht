@@ -2,20 +2,20 @@
 
 namespace ProjectManagementSystem.Core.Domain.Models.DecoratorPattern
 {
-    public class BacklogItemWithTag : IBacklogItem
+    public class BacklogItemWithTag : BacklogItemDecorator
     {
-        private IBacklogItem _backlogItem;
         public string Tag { get; set; }
 
         public BacklogItemWithTag(IBacklogItem backlogItem, string tag)
+            : base(backlogItem)
         {
-            _backlogItem = backlogItem;
             Tag = tag;
         }
 
-        public string GetDetails()
+        public override string GetDetails()
         {
-            return $"{_backlogItem.GetDetails()}, Tag: {Tag}";
+            return $"{base.GetDetails()}, Tag: {Tag}";
         }
     }
+
 }

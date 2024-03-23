@@ -4,18 +4,16 @@ namespace ProjectManagementSystem.Core.Domain.Models.DecoratorPattern
 {
     public abstract class BacklogItemDecorator : IBacklogItem
     {
-
         protected IBacklogItem backlogItem;
 
-        public BacklogItemDecorator(IBacklogItem backlogItem)
+        protected BacklogItemDecorator(IBacklogItem backlogItem)
         {
             this.backlogItem = backlogItem;
         }
 
-        public string GetDetails()
+        public virtual string GetDetails()
         {
-            throw new NotImplementedException();
+            return backlogItem.GetDetails();
         }
     }
-
 }

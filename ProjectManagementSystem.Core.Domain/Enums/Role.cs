@@ -3,10 +3,9 @@ namespace ProjectManagementSystem.Core.Domain.Enums
 {
     public enum Role
     {
-        ProjectManager,
+        Administrator,
         Developer,
         Tester,
-        ScrumMaster,
-        Stakeholder
+        Manager
     }
 }

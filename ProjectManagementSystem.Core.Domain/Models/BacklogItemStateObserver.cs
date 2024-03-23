@@ -2,7 +2,7 @@
 
 namespace ProjectManagementSystem.Core.Domain.Models
 {
-    public class ConcreteObserver : IBacklogItemStateObserver
+    public class BacklogItemStateObserver : IBacklogItemStateObserver
     {
         public void Update(IBacklogItemState newState)
         {
