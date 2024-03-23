@@ -1,7 +1,7 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
 using ProjectManagementSystem.Core.Domain.Models.CommandPattern;
 
-namespace ProjectManagementSystem.Tests.UnitTests
+namespace ProjectManagementSystem.Tests.UnitTests.CommandPattern
 {
     public class AddBranchCommandTests
     {

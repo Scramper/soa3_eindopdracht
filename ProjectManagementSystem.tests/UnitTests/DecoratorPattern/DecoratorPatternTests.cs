@@ -3,7 +3,7 @@ using ProjectManagementSystem.Core.Domain.Models;
 using ProjectManagementSystem.Core.Domain.Models.DecoratorPattern;
 using Xunit;
 
-namespace ProjectManagementSystem.Tests.UnitTests
+namespace ProjectManagementSystem.Tests.UnitTests.DecoratorPattern
 {
     public class DecoratorTests
     {

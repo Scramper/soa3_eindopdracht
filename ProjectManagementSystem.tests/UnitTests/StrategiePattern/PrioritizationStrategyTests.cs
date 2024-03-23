@@ -1,7 +1,7 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
 using ProjectManagementSystem.Core.Domain.PrioritizationStrategy;
 
-namespace ProjectManagementSystem.Tests.UnitTests
+namespace ProjectManagementSystem.Tests.UnitTests.StrategiePattern
 {
     public class PrioritizationStrategyTests
     {
