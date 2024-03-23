@@ -3,7 +3,7 @@ using ProjectManagementSystem.Core.Domain.Interfaces;
 using ProjectManagementSystem.Core.Domain.Models;
 using ProjectManagementSystem.Core.Domain.States;
 
-namespace ProjectManagementSystem.Tests.XunitTests
+namespace ProjectManagementSystem.Tests.UnitTests.ObserverPattern
 {
     public class ObserverPatternTests
     {

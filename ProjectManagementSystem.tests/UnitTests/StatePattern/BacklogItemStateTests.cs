@@ -1,7 +1,7 @@
 ﻿using ProjectManagementSystem.Core.Domain.Models;
 using ProjectManagementSystem.Core.Domain.States;
 
-namespace ProjectManagementSystem.Tests.XunitTests
+namespace ProjectManagementSystem.Tests.UnitTests.StatePattern
 {
     public class BacklogItemStateTests
     {

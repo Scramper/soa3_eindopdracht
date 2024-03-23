@@ -1,7 +1,7 @@
 ﻿using Moq;
 using ProjectManagementSystem.Core.Domain.Models;
 
-namespace ProjectManagementSystem.Tests.XunitTests
+namespace ProjectManagementSystem.Tests.UnitTests.AdapterPattern
 {
     public class AzureDevOpsAdapterTests
     {
