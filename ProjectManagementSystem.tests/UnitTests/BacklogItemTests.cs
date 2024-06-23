@@ -34,7 +34,6 @@ namespace ProjectManagementSystem.Tests.UnitTests
             backlogItem.AddObserver(observerMock.Object);
 
             // Assert
-            // Since we do not expose the observers list, we check by changing the state and seeing if the observer is called.
             backlogItem.State = new ToDoState(backlogItem);
             observerMock.Verify(o => o.Update(It.IsAny<IBacklogItemState>()), Times.Once);
         }
